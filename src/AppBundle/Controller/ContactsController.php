@@ -9,12 +9,16 @@
 namespace AppBundle\Controller;
 
 
+use AppBundle\Entity\Contacts;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ContactsController extends Controller
 {
     public function indexAction()
     {
-        return $this->render("Contacts/index.html.twig");
+        $entityManager = $this->getDoctrine()->getManager();
+        $contacts = $entityManager->getRepository(Contacts::class)->findAll();
+
+        return $this->render("Contacts/index.html.twig", ['contacts'=>$contacts]);
     }
 }

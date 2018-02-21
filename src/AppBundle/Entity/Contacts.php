@@ -70,6 +70,13 @@ class Contacts
      */
     private $picture;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="address", type="string", length=255, nullable=true)
+     */
+    private $address;
+
 
     /**
      * Get id
@@ -247,6 +254,25 @@ class Contacts
     public function getPicture()
     {
         return $this->picture;
+    }
+
+    /**
+     * @return $this
+     *
+     * @param string $address
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
     }
 }
 
