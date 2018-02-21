@@ -2,7 +2,7 @@
 
 {% block body%}
     {% for contact in contacts %}
-        <h4>Imię: {{ contact.name }}</h4>
+        <h4 class="alert-danger">Imię: {{ contact.name }}</h4>
         <p>Nazwisko: {{ contact.surname }}</p>
         <p>Adres: {{ contact.address }}</p>
         <p>Tel: {{ contact.telephone }}</p>
