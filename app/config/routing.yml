@@ -1,3 +1,8 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
+contacts_index:
+  path: /
+  defaults: {_controller: AppBundle:Contacts:index}
+  methods:  [GET]

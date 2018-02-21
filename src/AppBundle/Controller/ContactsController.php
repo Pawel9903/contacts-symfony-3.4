@@ -9,7 +9,12 @@
 namespace AppBundle\Controller;
 
 
-class ContactsController
-{
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+class ContactsController extends Controller
+{
+    public function indexAction()
+    {
+        return $this->render("Contacts/index.html.twig");
+    }
 }
