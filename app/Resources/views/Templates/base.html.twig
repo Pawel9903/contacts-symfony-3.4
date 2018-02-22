@@ -9,15 +9,23 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+    <div class="jumbotron jumbotron-fluid text-white bg-primary">
+        <div class="container text-center">
+            <h1 class="display-3">Contacts</h1>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id eros non est egestas pretium. Morbi aliquam suscipit rhoncus. Maecenas aliquet faucibus tortor, eget ullamcorper eros hendrerit a. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+        </div>
+    </div>
         <div class="container my-3">
             {% include('Templates/TopMenu.html.twig') %}
         </div>
-
-        <hr/>
-
         <div class="container">
             {% block body %}{% endblock %}
             {% block javascripts %}{% endblock %}
         </div>
+    <hr/>
+
+    <div class="container">
+        <p class="text-center display-6">Copyright 2018</p>
+    </div>
     </body>
 </html>

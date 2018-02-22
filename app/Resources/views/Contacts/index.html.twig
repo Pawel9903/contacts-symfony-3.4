@@ -3,15 +3,15 @@
 {% block body%}
     <div class="card-deck">
         {% for contact in contacts %}
-                    <div class="card col-md-4">
+                    <div class="card col-md-4 border-dark my-3  bg-primary text-white">
                         <img class="card-img" src="{{ contact.picture}}" alt="Responsive image"/>
-                        <div class="card-body">
-                            <h4 class="card-title">{{ contact.name ~" "~ contact.surname }}</h4>
+                        <div class="card-body border-top">
+                            <h4 class="card-title text-center">{{ contact.name ~" "~ contact.surname }}</h4>
                             <p>Address: {{ contact.address }}</p>
                             <p>Phone: {{ contact.telephone }}</p>
                             <p>Note: {{ contact.note }}</p>
                             <p>Type: {{ contact.type }}</p>
-                            <a class="btn btn-outline-primary" href="{{ url('contacts_details',{'id':contact.id}) }}">View Profile</a>
+                            <a class="btn btn-dark" href="{{ url('contacts_details',{'id':contact.id}) }}">View Profile</a>
                         </div>
                     </div>
         {% endfor %}
