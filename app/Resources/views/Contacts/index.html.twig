@@ -1,12 +1,19 @@
-{% extends 'base.html.twig' %}
+{% extends 'Templates/base.html.twig' %}
 
 {% block body%}
-    {% for contact in contacts %}
-        <h4 class="alert-danger">Imię: {{ contact.name }}</h4>
-        <p>Nazwisko: {{ contact.surname }}</p>
-        <p>Adres: {{ contact.address }}</p>
-        <p>Tel: {{ contact.telephone }}</p>
-        <p>Notatka: {{ contact.note }}</p>
-        <p>Rodzaj: {{ contact.type }}</p>
-    {% endfor %}
+    <div class="card-deck">
+        {% for contact in contacts %}
+                    <div class="card col-md-4">
+                        <img class="card-img" src="{{ contact.picture}}" alt="Responsive image"/>
+                        <div class="card-body">
+                            <h4 class="card-title">{{ contact.name ~" "~ contact.surname }}</h4>
+                            <p>Address: {{ contact.address }}</p>
+                            <p>Phone: {{ contact.telephone }}</p>
+                            <p>Note: {{ contact.note }}</p>
+                            <p>Type: {{ contact.type }}</p>
+                            <a class="btn btn-outline-primary" href="{{ url('contacts_details',{'id':contact.id}) }}">View Profile</a>
+                        </div>
+                    </div>
+        {% endfor %}
+    </div>
 {% endblock %}

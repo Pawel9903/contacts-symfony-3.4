@@ -43,9 +43,9 @@ class Contacts
     private $email;
 
     /**
-     * @var int
+     * @var bigint
      *
-     * @ORM\Column(name="telephone", type="integer")
+     * @ORM\Column(name="telephone", type="bigint")
      */
     private $telephone;
 
@@ -163,7 +163,7 @@ class Contacts
     /**
      * Set telephone
      *
-     * @param integer $telephone
+     * @param bigint $telephone
      *
      * @return Contacts
      */
@@ -177,7 +177,7 @@ class Contacts
     /**
      * Get telephone
      *
-     * @return int
+     * @return bigint
      */
     public function getTelephone()
     {

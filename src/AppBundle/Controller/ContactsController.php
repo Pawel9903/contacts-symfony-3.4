@@ -21,4 +21,9 @@ class ContactsController extends Controller
 
         return $this->render("Contacts/index.html.twig", ['contacts'=>$contacts]);
     }
+
+    public function detailsAction(Contacts $contact)
+    {
+        return $this->render('Contacts/details.html.twig',['contact'=>$contact]);
+    }
 }
