@@ -10,7 +10,9 @@ namespace AppBundle\Controller;
 
 
 use AppBundle\Entity\Contacts;
+use AppBundle\Form\ContactType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class ContactsController extends Controller
 {
@@ -25,5 +27,28 @@ class ContactsController extends Controller
     public function detailsAction(Contacts $contact)
     {
         return $this->render('Contacts/details.html.twig',['contact'=>$contact]);
+    }
+
+    public function addAction(Request $request)
+    {
+        $contact = new Contacts();
+        $form = $this->createForm(ContactType::class, $contact);
+
+        if($request->isMethod('post'))
+        {
+            $form->handleRequest($request);
+
+            if($form->isValid())
+            {
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($contact);
+                $entityManager->flush();
+            }
+
+            return $this->redirectToRoute('contacts_details',['contact'=>$contact]);
+        }
+
+        return $this->render('MyContacts/add.html.twig',['form'=>$form->createView()]);
+
     }
 }

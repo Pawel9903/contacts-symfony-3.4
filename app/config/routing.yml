@@ -12,6 +12,11 @@ contacts_details:
   defaults: {_controller: AppBundle:Contacts:details}
   methods: [GET]
 
+contacts_add:
+  path: /MyContacts/add
+  defaults: {_controller: AppBundle:Contacts:add}
+  methods:  [GET,POST]
+
 
 
 fos_user_security:

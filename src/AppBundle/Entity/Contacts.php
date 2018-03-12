@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Contacts
 {
+    const CATEGORY_PRIVATE = "private";
+    const CATEGORY_WORK = "work";
+
     /**
      * @var int
      *
@@ -25,6 +28,8 @@ class Contacts
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     *
+     * @Assert\NotBlank(message = "Field Name can not be empty")
      */
     private $name;
 
@@ -32,6 +37,8 @@ class Contacts
      * @var string
      *
      * @ORM\Column(name="surname", type="string", length=255)
+     *
+     * @Assert\NotBlank(message = "Field Surname can not be empty")
      */
     private $surname;
 
@@ -39,6 +46,10 @@ class Contacts
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255, unique=true)
+     *
+     * @Assert\NotBlank(message = "Field Email can not be empty")
+     *
+     * @Assert\Email(message = "This value is not a valid email address")
      */
     private $email;
 
@@ -46,6 +57,14 @@ class Contacts
      * @var bigint
      *
      * @ORM\Column(name="telephone", type="bigint")
+     *
+     * @Assert\Length(
+     *     min = "8",
+     *     max = "20",
+     *     minMessage = "Field Phone must have a minimum 8 characters",
+     *     maxMessage = "Field Phone must have a maximum 20 characters"
+     *     )
+     *
      */
     private $telephone;
 

@@ -4,7 +4,8 @@
     <div class="card-deck">
         {% for contact in contacts %}
                     <div class="card col-md-4 border-dark my-3  bg-primary text-white">
-                        <img class="card-img" src="{{ contact.picture}}" alt="Responsive image"/>
+                        <img class="card-img" src="{% if contact.picture == '' %} images\contacts\head.png " alt="Responsive image"/>
+            {% endif %}
                         <div class="card-body border-top">
                             <h4 class="card-title text-center">{{ contact.name ~" "~ contact.surname }}</h4>
                             <p>Address: {{ contact.address }}</p>
