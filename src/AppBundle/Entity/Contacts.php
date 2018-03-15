@@ -92,6 +92,13 @@ class Contacts
      */
     private $address;
 
+    /**
+     * @var User
+     *
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="contacts")
+     */
+    private $owner;
+
 
     /**
      * Get id
@@ -288,6 +295,22 @@ class Contacts
     public function getAddress()
     {
         return $this->address;
+    }
+
+    /**
+     * @return User
+     */
+    public function getOwner()
+    {
+        return $this->owner;
+    }
+
+    /**
+     * @param User $owner
+     */
+    public function setOwner($owner)
+    {
+        $this->owner = $owner;
     }
 }
 
