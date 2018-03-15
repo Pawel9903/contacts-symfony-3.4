@@ -1,10 +1,10 @@
 {% extends 'Templates/base.html.twig' %}
 
 {% block body%}
-    <div class="card-deck">
+    <div class="card">
         {% for contact in contacts %}
-                    <div class="card col-md-4 border-dark my-3  bg-primary text-white">
-                        <img class="card-img" src="{% if contact.picture == '' %} images\contacts\head.png " alt="Responsive image"/>
+                    <div class="card col-md-4 offset-4 border-dark my-3  bg-primary text-white">
+                        <img class="card-img"  alt="Responsive image" src={% if contact.picture == '' %} "\images\contacts\head.png"/>
             {% endif %}
                         <div class="card-body border-top">
                             <h4 class="card-title text-center">{{ contact.name ~" "~ contact.surname }}</h4>
@@ -12,7 +12,7 @@
                             <p>Phone: {{ contact.telephone }}</p>
                             <p>Note: {{ contact.note }}</p>
                             <p>Type: {{ contact.type }}</p>
-                            <a class="btn btn-dark" href="{{ url('contacts_details',{'id':contact.id}) }}">View Profile</a>
+                            <a class="btn btn-dark" href="{{ url('contacts_details',{'id':contact.id}) }}">Details</a>
                         </div>
                     </div>
         {% endfor %}

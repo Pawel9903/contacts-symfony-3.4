@@ -43,9 +43,12 @@ class ContactsController extends Controller
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($contact);
                 $entityManager->flush();
-            }
 
-            return $this->redirectToRoute('contacts_details',['contact'=>$contact]);
+                $this->addFlash("success", "Contact {$contact->getName()} has been successfully added");
+
+                return $this->redirectToRoute('contacts_details',['id'=>$contact->getId()]);
+            }
+                $this->addFlash("error","Add Failed");
         }
 
         return $this->render('MyContacts/add.html.twig',['form'=>$form->createView()]);

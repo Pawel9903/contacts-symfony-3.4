@@ -3,7 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Contacts
  *
@@ -58,12 +58,8 @@ class Contacts
      *
      * @ORM\Column(name="telephone", type="bigint")
      *
-     * @Assert\Length(
-     *     min = "8",
-     *     max = "20",
-     *     minMessage = "Field Phone must have a minimum 8 characters",
-     *     maxMessage = "Field Phone must have a maximum 20 characters"
-     *     )
+     * @Assert\NotBlank(message = "Field Telephone can not be empty")
+     *
      *
      */
     private $telephone;
