@@ -1,20 +1,15 @@
 {% extends 'Templates/base.html.twig' %}
-
-{% block body%}
-    <div class="card">
-        {% for contact in contacts %}
-                    <div class="card col-md-4 offset-4 border-dark my-3  bg-primary text-white">
-                        <img class="card-img"  alt="Responsive image" src={% if contact.picture == '' %} "\images\contacts\head.png"/>
-            {% endif %}
-                        <div class="card-body border-top">
-                            <h4 class="card-title text-center">{{ contact.name ~" "~ contact.surname }}</h4>
-                            <p>Address: {{ contact.address }}</p>
-                            <p>Phone: {{ contact.telephone }}</p>
-                            <p>Note: {{ contact.note }}</p>
-                            <p>Type: {{ contact.type }}</p>
-                            <a class="btn btn-dark" href="{{ url('contacts_details',{'id':contact.id}) }}">Details</a>
-                        </div>
-                    </div>
-        {% endfor %}
+{% block body %}
+    <div class="d-flex col-md-10 offset-md-1">
+        <div class="col-md-6">
+            <h3 class="display-4">You already have account?</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget imperdiet urna. Phasellus commodo venenatis metus ut iaculis. Maecenas id faucibus enim. Sed aliquet purus nisl, ut luctus lorem porttitor ut. Nam ut ipsum volutpat, commodo dui in, finibus erat. Phasellus lectus purus, tempor id finibus in, auctor quis ipsum. Nulla a ipsum massa. Maecenas finibus, nulla quis efficitur pulvinar, sapien quam fringilla nisl, ac vulputate purus felis eget odio. Donec sodales felis a justo volutpat lobortis.</p>
+            <button class="btn btn-primary" href="#">Sign in</button>
+        </div>
+        <div class="col-md-6">
+            <h3 class="display-4">You are not our user yet?</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget imperdiet urna. Phasellus commodo venenatis metus ut iaculis. Maecenas id faucibus enim. Sed aliquet purus nisl, ut luctus lorem porttitor ut. Nam ut ipsum volutpat, commodo dui in, finibus erat. Phasellus lectus purus, tempor id finibus in, auctor quis ipsum. Nulla a ipsum massa. Maecenas finibus, nulla quis efficitur pulvinar, sapien quam fringilla nisl, ac vulputate purus felis eget odio. Donec sodales felis a justo volutpat lobortis.</p>
+            <button class="btn btn-primary" href="#">Register</button>
+        </div>
     </div>
 {% endblock %}

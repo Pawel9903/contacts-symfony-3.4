@@ -18,10 +18,15 @@ class ContactsController extends Controller
 {
     public function indexAction()
     {
+        return $this->render("Contacts/index.html.twig");
+    }
+
+    public function myContactsAction()
+    {
         $entityManager = $this->getDoctrine()->getManager();
         $contacts = $entityManager->getRepository(Contacts::class)->findAll();
 
-        return $this->render("Contacts/index.html.twig", ['contacts'=>$contacts]);
+        return $this->render("MyContacts/index.html.twig", ['contacts'=>$contacts]);
     }
 
     public function detailsAction(Contacts $contact)
