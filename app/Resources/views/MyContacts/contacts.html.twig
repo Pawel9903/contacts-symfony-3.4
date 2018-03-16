@@ -4,8 +4,8 @@
     <div class="card">
         {% for contact in contacts %}
                     <div class="card col-md-4 offset-4 border-dark my-3  bg-primary text-white">
-                        <img class="card-img"  alt="Responsive image" src={% if contact.picture == '' %} "\images\contacts\head.png"/>
-            {% endif %}
+                        <img class="card-img"  alt="Responsive image" src="{% if contact.picture is not null %} {{ '/images/contacts/' ~ contact.picture }} {% else %} images/contacts/head.png
+            {% endif %}"/>
                         <div class="card-body border-top">
                             <h4 class="card-title text-center">{{ contact.name ~" "~ contact.surname }}</h4>
                             <p>Address: {{ contact.address }}</p>

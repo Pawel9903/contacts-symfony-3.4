@@ -41,7 +41,7 @@ class ContactType extends AbstractType
                     'WORK' => 'work'
                 )
             ),['label'=>'Type*'])
-            ->add('picture',FileType::class,['label'=>'Picture'])
+            ->add('picture',FileType::class,['label'=>'Picture (jpg, jpeg, png)'])
             ->add('submit',SubmitType::class,['label'=>'Confirm']);
     }
 

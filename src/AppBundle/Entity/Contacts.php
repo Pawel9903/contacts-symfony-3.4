@@ -82,6 +82,11 @@ class Contacts
      * @var string
      *
      * @ORM\Column(name="picture", type="string", length=255, nullable=true)
+     *
+     * @Assert\File(
+     * mimeTypes = {"image/jpg", "image/jpeg", "image/png"},
+     * mimeTypesMessage = "Invalid format"
+     * )
      */
     private $picture;
 
@@ -312,5 +317,6 @@ class Contacts
     {
         $this->owner = $owner;
     }
+
 }
 
