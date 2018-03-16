@@ -7,20 +7,27 @@ contacts_index:
   defaults: {_controller: AppBundle:Contacts:index}
   methods:  [GET]
 
-contacts_my_contacts:
-  path: /MyContacts
-  defaults: {_controller: AppBundle:Contacts:myContacts}
-  methods:  [GET]
-
 contacts_details:
   path: /contacts/details/{id}
   defaults: {_controller: AppBundle:Contacts:details}
   methods: [GET]
 
-contacts_add:
+
+
+my_contacts_contacts:
+  path: /MyContacts
+  defaults: {_controller: AppBundle:MyContacts:contacts}
+  methods:  [GET]
+
+my_contacts_add:
   path: /MyContacts/add
-  defaults: {_controller: AppBundle:Contacts:add}
+  defaults: {_controller: AppBundle:MyContacts:add}
   methods:  [GET,POST]
+
+my_contacts_details:
+  path: /MyContacts/details/{id}
+  defaults: {_controller: AppBundle:MyContacts:details}
+  methods: [GET]
 
 
 
