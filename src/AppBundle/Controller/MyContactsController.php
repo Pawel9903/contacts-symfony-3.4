@@ -43,22 +43,23 @@ class MyContactsController extends Controller
     {
         $contact = new Contacts();
         $form = $this->createForm(ContactType::class, $contact);
-
+        
         if($request->isMethod('post'))
         {
             $form->handleRequest($request);
 
-            if($form->isValid())
-            {
-                $file = $contact->getPicture();
-                $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
+            if($form->isValid()) {
+                if ($contact->getPicture() != null) {
+                    $file = $contact->getPicture();
+                    $fileName = $this->generateUniqueFileName() . '.' . $file->guessExtension();
 
-                $file->move(
-                    $this->getParameter('profile_directory'),
-                    $fileName
-                );
+                    $file->move(
+                        $this->getParameter('profile_directory'),
+                        $fileName
+                    );
 
-                $contact->setPicture($fileName);
+                    $contact->setPicture($fileName);
+                }
 
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($contact);

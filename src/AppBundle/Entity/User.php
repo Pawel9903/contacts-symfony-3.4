@@ -26,7 +26,7 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @var Contacts[]\ArrayCollection;
+     * @var Contacts[]|ArrayCollection
      *
      * @ORM\OneToMany(targetEntity="Contacts", mappedBy="owner")
      * @ORM\JoinColumn(name="owner_id", referencedColumnName="id")
@@ -38,23 +38,27 @@ class User extends BaseUser
      */
     public function __construct()
     {
-        parent:: __construct();
+        parent::__construct();
         $this->contacts = new ArrayCollection();
     }
 
     /**
-     * @return Contacts[]
+     * @return Contacts[]|ArrayCollection
      */
-    public function getContacts()
+    public function getAuctions()
     {
         return $this->contacts;
     }
 
     /**
-     * @param Contacts[] $contacts
+     * @param Contacts $contacts
+     *
+     * @return $this
      */
-    public function setContacts($contacts)
+    public function addAuction(Contacts $contacts)
     {
-        $this->contacts = $contacts;
+        $this->contacts[] = $contacts;
+
+        return $this;
     }
 }
