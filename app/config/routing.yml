@@ -7,6 +7,11 @@ contacts_index:
   defaults: {_controller: AppBundle:Contacts:index}
   methods:  [GET]
 
+contacts_contacts:
+  path: /contacts
+  defaults: {_controller: AppBundle:Contacts:contacts}
+  methods:  [GET]
+
 contacts_details:
   path: /contacts/details/{id}
   defaults: {_controller: AppBundle:Contacts:details}

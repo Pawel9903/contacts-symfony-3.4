@@ -21,6 +21,13 @@ class ContactsController extends Controller
         return $this->render("Contacts/index.html.twig");
     }
 
+    public function contactsAction()
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $contacts = $entityManager->getRepository(Contacts::class)->findAll();
+
+        return $this->render("Contacts/contacts.html.twig", ['contacts'=>$contacts]);
+    }
 
     public function detailsAction(Contacts $contact)
     {

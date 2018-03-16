@@ -29,7 +29,7 @@ class MyContactsController extends Controller
     public function contactsAction()
     {
         $entityManager = $this->getDoctrine()->getManager();
-        $contacts = $entityManager->getRepository(Contacts::class)->findAll();
+        $contacts = $entityManager->getRepository(Contacts::class)->findBy(["owner"=>$this->getUser()]);
 
         return $this->render("MyContacts/contacts.html.twig", ['contacts'=>$contacts]);
     }
@@ -43,7 +43,7 @@ class MyContactsController extends Controller
     {
         $contact = new Contacts();
         $form = $this->createForm(ContactType::class, $contact);
-        
+
         if($request->isMethod('post'))
         {
             $form->handleRequest($request);
@@ -60,7 +60,7 @@ class MyContactsController extends Controller
 
                     $contact->setPicture($fileName);
                 }
-
+                $contact->setOwner($this->getUser());
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($contact);
                 $entityManager->flush();
