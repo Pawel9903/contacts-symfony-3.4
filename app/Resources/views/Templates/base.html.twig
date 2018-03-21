@@ -30,13 +30,17 @@
         </div>
     </div>
         <div class="container my-3">
-            {% include('Templates/TopMenu.html.twig') %}
+            {% if is_granted("ROLE_USER") %}
+                {% include('Templates/topMenu.html.twig') %}
+            {% else %}
+                {% include('Templates/anonymousTopMenu.html.twig') %}
         </div>
 
         <div class="container">
             {% for message in app.flashes('error') %}
                 <div class="alert alert-danger">{{ message }}</div>
             {% endfor %}
+            {% endif %}
 
             {% for message in app.flashes('success') %}
                 <div class="alert alert-success">{{ message }}</div>

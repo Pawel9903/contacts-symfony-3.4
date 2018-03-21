@@ -28,6 +28,8 @@ class MyContactsController extends Controller
 
     public function contactsAction()
     {
+        $this->denyAccessUnlessGranted("ROLE_USER", "You're not logged in!");
+
         $entityManager = $this->getDoctrine()->getManager();
         $contacts = $entityManager->getRepository(Contacts::class)->findBy(["owner"=>$this->getUser()]);
 
@@ -36,11 +38,15 @@ class MyContactsController extends Controller
 
     public function detailsAction(Contacts $contact)
     {
+        $this->denyAccessUnlessGranted("ROLE_USER", "You're not logged in!");
+
         return $this->render('MyContacts/details.html.twig',['contact'=>$contact]);
     }
 
     public function addAction(Request $request)
     {
+        $this->denyAccessUnlessGranted("ROLE_USER", "You're not logged in!");
+
         $contact = new Contacts();
         $form = $this->createForm(ContactType::class, $contact);
 
