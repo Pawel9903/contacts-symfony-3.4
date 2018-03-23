@@ -16,8 +16,10 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ContactsController extends Controller
 {
-    public function indexAction()
+    public function indexAction(Request $request)
     {
+        $request->setParameter('_locale', 'en');
+;
         return $this->render("Contacts/index.html.twig");
     }
 
