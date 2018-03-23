@@ -1,6 +1,21 @@
 
 <nav class="navbar navbar-expand navbar-dark bg-dark rounded">
     <div class="container">
+        {% set route = app.request.attributes.get('_route') %}
+        {% set route_params = app.request.attributes.get('_route_params') %}
+        {% set params = route_params|merge(app.request.query.all) %}
+
+        {# You may want to not print a flag/link for current view, the "if" here let you handle it #}
+
+        {% for locale in locales if locale != app.request.locale %}
+
+            <li>
+                <a href="{{ path(route, params|merge({ _locale: locale })) }}">
+                    <img src="{{ asset('img/flags/' ~ locale ~ '.jpg') }}" alt="{{ locale }}">
+                </a>
+            </li>
+
+        {% endfor %}
         <a href="#" class="navbar-brand border-right pr-2">PG-Contacts</a>
                 <div class="navbar-nav mr-auto">
 
@@ -12,7 +27,7 @@
             <form action="#" class="form-inline">
                 <input type="text" class="form-control">
                 <button class="btn btn-light mx-2">Search</button>
-            </form>
+            </f orm>
         <span class="navbar-text mx-4">23.02.2018</span>
     </div>
 </nav>
