@@ -3,9 +3,11 @@ app:
     type: annotation
 
 contacts_index:
-  path: /
+  path: /{_locale}/
   defaults: {_controller: AppBundle:Contacts:index}
   methods:  [GET]
+  requirements:
+      _locale: en|pl
 
 contacts_contacts:
   path: /contacts

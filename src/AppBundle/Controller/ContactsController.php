@@ -18,8 +18,6 @@ class ContactsController extends Controller
 {
     public function indexAction(Request $request)
     {
-        $request->setParameter('_locale', 'en');
-;
         return $this->render("Contacts/index.html.twig");
     }
 
