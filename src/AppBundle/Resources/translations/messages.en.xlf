@@ -4,7 +4,7 @@
         <body>
             <trans-unit id="symfony_is_great">
                 <source>Symfony is great</source>
-                <target>duppa</target>
+                <target>English</target>
             </trans-unit>
         </body>
     </file>
