@@ -1,3 +1,17 @@
+Tytuł: Contacts Symfony 3.4
+
+Opis:
+
+Jest to mój pierwszy projekt, który tworze samodzielnie w symfony 3.4.
+Rozszerzony projekt z kontem użytkownika i dodawaniem/edycją/znajdowaniem/usuwaniem kontaktów. Możliwość dodania danych i zdjęcia kontaktu. Translacja PL/ENG. Aplikacja nie jest jeszcze gotowa ale planuje stworzyć z niej mini portal społecznościowy.
+
+Użyte technologie: Html, Css, Php 7, MySql, Bootstrap 4, Symfony 3.4
+
+
+
+
+
+
 Symfony Standard Edition
 ========================
 
