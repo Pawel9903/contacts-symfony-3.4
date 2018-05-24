@@ -2,9 +2,77 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="en" datatype="plaintext" original="file.ext">
         <body>
-            <trans-unit id="symfony_is_great">
-                <source>Symfony is great</source>
-                <target>English</target>
+            <trans-unit id="Symfony is great">
+                <source>logo</source>
+                <target>PG-Contacts</target>
+            </trans-unit>
+            <trans-unit id="home">
+                <source>home</source>
+                <target>Start</target>
+            </trans-unit>
+            <trans-unit id="other contacts">
+                <source>other contacts</source>
+                <target>Other contacts</target>
+            </trans-unit>
+            <trans-unit id="my contacts">
+                <source>my contacts</source>
+                <target>My contacts</target>
+            </trans-unit>
+            <trans-unit id="add contact">
+                <source>add contact</source>
+                <target>Add contact</target>
+            </trans-unit>
+            <trans-unit id="search">
+                <source>search</source>
+                <target>Search</target>
+            </trans-unit>
+            <trans-unit id="create account">
+                <source>create account</source>
+                <target>Create account</target>
+            </trans-unit>
+            <trans-unit id="welcome">
+                <source>welcome</source>
+                <target>Welcome</target>
+            </trans-unit>
+            <trans-unit id="account">
+                <source>account</source>
+                <target>Account</target>
+            </trans-unit>
+            <trans-unit id="edit">
+                <source>edit</source>
+                <target>Edit</target>
+            </trans-unit>
+            <trans-unit id="logout">
+                <source>logout</source>
+                <target>Logout</target>
+            </trans-unit>
+            <trans-unit id="sign in">
+                <source>sign in</source>
+                <target>Sign in</target>
+            </trans-unit>
+            <trans-unit id="register">
+                <source>register</source>
+                <target>Register</target>
+            </trans-unit>
+            <trans-unit id="contacts">
+                <source>contacts</source>
+                <target>Contacts</target>
+            </trans-unit>
+            <trans-unit id="change language">
+                <source>change language</source>
+                <target>Change language</target>
+            </trans-unit>
+            <trans-unit id="you are not our user yet">
+                <source>you are not our user yet</source>
+                <target>You are not our user yet</target>
+            </trans-unit>
+            <trans-unit id="news">
+                <source>news</source>
+                <target>News</target>
+            </trans-unit>
+            <trans-unit id="you already have account">
+                <source>you already have account</source>
+                <target>You already have account</target>
             </trans-unit>
         </body>
     </file>

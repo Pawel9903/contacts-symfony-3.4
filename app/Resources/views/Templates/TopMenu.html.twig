@@ -1,33 +1,18 @@
 
 <nav class="navbar navbar-expand navbar-dark bg-dark rounded">
     <div class="container">
-        {% set route = app.request.attributes.get('_route') %}
-        {% set route_params = app.request.attributes.get('_route_params') %}
-        {% set params = route_params|merge(app.request.query.all) %}
-
-        {# You may want to not print a flag/link for current view, the "if" here let you handle it #}
-
-        {% for locale in locales if locale != app.request.locale %}
-
-            <li>
-                <a href="{{ path(route, params|merge({ _locale: locale })) }}">
-                    <img src="{{ asset('img/flags/' ~ locale ~ '.jpg') }}" alt="{{ locale }}">
-                </a>
-            </li>
-
-        {% endfor %}
-        <a href="#" class="navbar-brand border-right pr-2">PG-Contacts</a>
+        <a href="#" class="navbar-brand border-right pr-2">{{ 'logo'|trans }}</a>
                 <div class="navbar-nav mr-auto">
 
-                    <a href="{{ url('contacts_index') }}" class="nav-link nav-item">Home</a>
-                    <a href="{{ url('contacts_contacts') }}" class="nav-link nav-item">Other Contacts</a>
-                    <a href="{{ url('my_contacts_contacts') }}" class="nav-link nav-item">My Contacts</a>
-                    <a href="{{ url('my_contacts_add') }}" class="nav-link nav-item">Add Contact</a>
+                    <a href="{{ url('contacts_index') }}" class="nav-link nav-item">{{ 'home'|trans }}</a>
+                    <a href="{{ url('contacts_contacts') }}" class="nav-link nav-item">{{ 'other contacts'|trans }}</a>
+                    <a href="{{ url('my_contacts_contacts') }}" class="nav-link nav-item">{{ 'my contacts'|trans }}</a>
+                    <a href="{{ url('my_contacts_add') }}" class="nav-link nav-item">{{ 'add contact'|trans }}</a>
                 </div>
             <form action="#" class="form-inline">
                 <input type="text" class="form-control">
-                <button class="btn btn-light mx-2">Search</button>
-            </f orm>
+                <button class="btn btn-light mx-2">{{ 'search'|trans }}</button>
+            </form>
         <span class="navbar-text mx-4">23.02.2018</span>
     </div>
 </nav>

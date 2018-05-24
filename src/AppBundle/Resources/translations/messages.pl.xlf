@@ -1,10 +1,74 @@
 <?xml version="1.0"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="pl" datatype="plaintext" original="file.ext">
+    <file source-language="en" datatype="plaintext" original="file.ext">
         <body>
-            <trans-unit id="symfony_is_great">
-                <source>Symfony is great</source>
-                <target>J'aime Symfony</target>
+            <trans-unit id="Symfony is great">
+                <source>logo</source>
+                <target>PG-Kontakty</target>
+            </trans-unit>
+            <trans-unit id="home">
+                <source>home</source>
+                <target>Start</target>
+            </trans-unit>
+            <trans-unit id="other contacts">
+                <source>other contacts</source>
+                <target>Inne kontakty</target>
+            </trans-unit>
+            <trans-unit id="my contacts">
+                <source>my contacts</source>
+                <target>Moje kontakty</target>
+            </trans-unit>
+            <trans-unit id="add contact">
+                <source>add contact</source>
+                <target>Dodaj kontakt</target>
+            </trans-unit>
+            <trans-unit id="search">
+                <source>search</source>
+                <target>Szukaj</target>
+            </trans-unit>
+            <trans-unit id="welcome">
+                <source>welcome</source>
+                <target>Witaj</target>
+            </trans-unit>
+            <trans-unit id="account">
+                <source>account</source>
+                <target>Konto</target>
+            </trans-unit>
+            <trans-unit id="edit">
+                <source>edit</source>
+                <target>Edytuj</target>
+            </trans-unit>
+            <trans-unit id="logout">
+                <source>logout</source>
+                <target>Wyloguj</target>
+            </trans-unit>
+            <trans-unit id="sign in">
+                <source>sign in</source>
+                <target>Zaloguj</target>
+            </trans-unit>
+            <trans-unit id="register">
+                <source>register</source>
+                <target>Rejestracja</target>
+            </trans-unit>
+            <trans-unit id="contacts">
+                <source>contacts</source>
+                <target>Kontakty</target>
+            </trans-unit>
+            <trans-unit id="change language">
+                <source>change language</source>
+                <target>Zmień język</target>
+            </trans-unit>
+            <trans-unit id="you are not our user yet">
+                <source>you are not our user yet</source>
+                <target>Nie masz jeszcze konta</target>
+            </trans-unit>
+            <trans-unit id="news">
+                <source>news</source>
+                <target>Wiadomości</target>
+            </trans-unit>
+            <trans-unit id="you already have account">
+                <source>you already have account</source>
+                <target>Masz już konto</target>
             </trans-unit>
         </body>
     </file>

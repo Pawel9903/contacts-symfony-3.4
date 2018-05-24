@@ -3,56 +3,88 @@ app:
     type: annotation
 
 contacts_index:
-  path: /{_locale}/
-  defaults: {_controller: AppBundle:Contacts:index}
+  path: /{_locale}
+  defaults: {_controller: AppBundle:Contacts:index, _locale: en}
   methods:  [GET]
   requirements:
       _locale: en|pl
 
 contacts_contacts:
-  path: /contacts
+  path: /{_locale}/contacts
   defaults: {_controller: AppBundle:Contacts:contacts}
   methods:  [GET]
+  requirements:
+      _locale: en|pl
 
 contacts_details:
-  path: /contacts/details/{id}
+  path: /{_locale}/contacts/details/{id}
   defaults: {_controller: AppBundle:Contacts:details}
   methods: [GET]
+  requirements:
+      _locale: en|pl
 
 
 
 my_contacts_contacts:
-  path: /MyContacts
+  path: /{_locale}/MyContacts
   defaults: {_controller: AppBundle:MyContacts:contacts}
   methods:  [GET]
+  requirements:
+      _locale: en|pl
 
 my_contacts_add:
-  path: /MyContacts/add
+  path: /{_locale}/MyContacts/add
   defaults: {_controller: AppBundle:MyContacts:add}
   methods:  [GET,POST]
+  requirements:
+      _locale: en|pl
 
 my_contacts_details:
-  path: /MyContacts/details/{id}
+  path: /{_locale}/MyContacts/details/{id}
   defaults: {_controller: AppBundle:MyContacts:details}
   methods: [GET]
+  requirements:
+      _locale: en|pl
 
 
+fos_user_security_check:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+    prefix: /{_locale}/
+    requirements:
+          _locale: en|pl
+
+fos_user_security_logout:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+    prefix: /{_locale}/
+    requirements:
+          _locale: en|pl
 
 fos_user_security:
   resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+  prefix: /{_locale}/
+  requirements:
+      _locale: en|pl
 
 fos_user_profile:
   resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
-  prefix: /profile
+  prefix: /{_locale}/profile
+  requirements:
+      _locale: en|pl
 
 fos_user_register:
   resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
-  prefix: /register
+  prefix: /{_locale}/register
+  requirements:
+      _locale: en|pl
 
 fos_user_resetting:
   resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
-  prefix: /resetting
+  prefix: /{_locale}/resetting
+  requirements:
+      _locale: en|pl
 
 fos_user_change_password:
   resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
-  prefix: /profile
+  prefix: /{_locale}/profile
+  requirements:
+      _locale: en|pl

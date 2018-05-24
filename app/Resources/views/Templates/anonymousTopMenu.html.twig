@@ -1,11 +1,11 @@
 
 <nav class="navbar navbar-expand navbar-dark bg-dark rounded">
     <div class="container">
-        <a href="#" class="navbar-brand border-right pr-2">PG-Contacts</a>
+        <a href="#" class="navbar-brand border-right pr-2">{{ 'logo'|trans }}</a>
                 <div class="navbar-nav mr-auto">
-                    <a href="{{ url('contacts_index') }}" class="nav-link nav-item">Home</a>
-                    <a href="{{ url('fos_user_security_login') }}" class="nav-link nav-item">Sign In</a>
-                    <a href="{{ url('fos_user_registration_register') }}" class="nav-link nav-item">Create account</a>
+                    <a href="{{ url('contacts_index') }}" class="nav-link nav-item">{{ 'home'|trans }}</a>
+                    <a href="{{ url('fos_user_security_login') }}" class="nav-link nav-item">{{ 'sign in'|trans }}</a>
+                    <a href="{{ url('fos_user_registration_register') }}" class="nav-link nav-item">{{ 'create account'|trans }}</a>
                 </div>
             </form>
         <span class="navbar-text mx-4">23.02.2018</span>
